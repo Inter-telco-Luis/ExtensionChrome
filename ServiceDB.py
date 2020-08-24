@@ -41,6 +41,14 @@ class User(Resource):
         print('\nPARAMETROS ENTRADA:')
         for key,value in args.items():
             print(key + ':', value.type())
+            for item in value:
+                print(item)
+                #
+                #
+                #
+            #
+            #
+            #
             return value
             
 
