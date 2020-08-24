@@ -40,11 +40,11 @@ class User(Resource):
         
         print('\nPARAMETROS ENTRADA:')
         for key,value in args.items():
-            print(key + ':', value)
+            print(key + ':', value.type())
             return value
             
 
 api.add_resource(User, "/")
 
-app.run(debug=True, port=1233, host='0.0.0.0')
+app.run(ssl_context=('/home/ubuntu/cert.pem', '/home/ubuntu/key.pem'),debug=True, port=1233, host='0.0.0.0')
 
