@@ -7,7 +7,7 @@ from wand.image import Image
 import cv2 as cv2
 import numpy as np
 import os
-
+import DB
  
 app = Flask(__name__)
 api = Api(app)
@@ -40,7 +40,8 @@ class User(Resource):
         
         print('\nPARAMETROS ENTRADA:')
         for key,value in args.items():
-            print(key + ':', value)
+            fill_ef_segments(value)
+            #print(key + ':', value)
             #for item in value:
              #   print(item)
                 #
