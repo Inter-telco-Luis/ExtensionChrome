@@ -11,7 +11,7 @@ def connection_db():
     #                         database="ocr")
     conn = psycopg2.connect(user="intertelcoluisr",
                             password="Exito!2019",
-                            host="ec2-35-174-208-143.compute-1.amazonaws.com",
+                            host="localhost",
                             port="5432",
                             database="eventdata")
     return conn
