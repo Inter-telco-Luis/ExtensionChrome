@@ -7,6 +7,7 @@ from wand.image import Image
 import cv2 as cv2
 import numpy as np
 import os
+from OpenSSL import SSL
 from DB import fill_ef_segments
  
 app = Flask(__name__)
@@ -30,6 +31,12 @@ r_400 = Response("Peticion invalida.", status=400)
 
 # 500 Internal Server Error
 r_500 = Response("Error interno del servidor", status=500)
+
+
+context = SSL.Context(SSL.SSLv3_METHOD)
+# context = SSL.Context(SSL.TLSv1_2_METHOD)
+context.use_certificate('cert.pem')
+context.use_privatekey('key.pem')
 
 
 class User(Resource):
@@ -57,5 +64,5 @@ class User(Resource):
 
 api.add_resource(User, "/")
 
-app.run(ssl_context=('/home/ubuntu/cert.pem', '/home/ubuntu/key.pem'),debug=True, port=1233, host='0.0.0.0')
+app.run(ssl_context=context,debug=True, port=1233, host='0.0.0.0')
 
