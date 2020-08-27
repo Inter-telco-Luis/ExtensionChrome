@@ -57,5 +57,5 @@ class User(Resource):
 
 api.add_resource(User, "/")
 
-app.run(ssl_context=('/home/ubuntu/cert.pem', '/home/ubuntu/key.pem'),debug=True, port=1233, host='0.0.0.0')
+app.run(ssl_context=('cert.pem', 'key.pem'),debug=True, port=443, host='0.0.0.0')
 
