@@ -3,8 +3,6 @@ from flask import Response
 from flask_restful import Api, Resource, reqparse
 from flask import jsonify
 from flask_cors import CORS
-from wand.image import Image
-import cv2 as cv2
 import numpy as np
 import os
 #from OpenSSL import SSL
