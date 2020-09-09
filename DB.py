@@ -25,7 +25,7 @@ def fill_ef_segments(segment):
         cur = conn.cursor()
 
         # query = "INSERT INTO events (url,classname,text) VALUES ('" + segment + "');"
-        query = "INSERT INTO events (date,time,base_uri,class_name,text_content,inner_html,inner_text,node_name,node_value,button,from_element,current_target,relate_target,time_stamp) VALUES ( CURRENT_DATE, CURRENT_TIME,'" + segment[0] + "','"+segment[1]+"','"+segment[2]+"','"+segment[3]+"','"+segment[4]+"','"+segment[5]+"','"+segment[6]+"','"+segment[7]+"','"+segment[8]+"','"+segment[9]+"','"+segment[10]+"','"+segment[11]+"','"+segment[12]+"');"
+        query = "INSERT INTO events (date,time,base_uri,class_name,text_content,inner_html,inner_text,node_name,node_value,button,from_element,current_target,relate_target,time_stamp) VALUES ( CURRENT_DATE, CURRENT_TIME,'" + segment[0] + "','"+segment[1]+"','"+segment[2]+"','"+segment[3]+"','"+segment[4]+"','"+segment[5]+"','"+segment[6]+"','"+segment[7]+"','"+segment[8]+"','"+segment[9]+"','"+segment[10]+"','"+segment[11]+"');"
         print(query)
         cur.execute(query)
 
