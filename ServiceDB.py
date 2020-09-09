@@ -47,9 +47,10 @@ class User(Resource):
         
         print('\nPARAMETROS ENTRADA:')
         for key,value in args.items():
-            parameters=['','','']
+            parameters=['','','','','','','','','','','','']
             parameters=value.split(",")
-            fill_ef_segments(parameters)
+        
+        fill_ef_segments(parameters)
             #print(key + ':', value)
             #for item in value:
              #   print(item)
@@ -59,7 +60,7 @@ class User(Resource):
             #
             #
             #
-            return value
+        return value
             
 
 api.add_resource(User, "/")
