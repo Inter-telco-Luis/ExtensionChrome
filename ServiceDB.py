@@ -38,11 +38,11 @@ class User(Resource):
         
         print('\nPARAMETROS ENTRADA:')
         for key,value in args.items():
-            #parameters=['','','','','','','','','','','','']
-            #parameters=value.split(",")
+            parameters=['','','','','','','','','','','','']
+            parameters=value.split(",")
         
-        #fill_ef_segments(parameters)
-            print(key + ':', value)
+        fill_ef_segments(parameters)
+            #print(key + ':', value)
             #for item in value:
              #   print(item)
                 #
