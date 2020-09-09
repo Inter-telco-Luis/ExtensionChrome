@@ -56,9 +56,6 @@ class User(Resource):
 
 api.add_resource(User, "/")
 
-<<<<<<< HEAD
 app.run(ssl_context=('cert.pem', 'key.pem'),debug=True, port=1233, host='0.0.0.0')
-=======
-app.run(debug=True, port=1233, host='0.0.0.0')
->>>>>>> b51f5d3cb4c37fd8aabb278a223f6f630adf10fd
+
 
