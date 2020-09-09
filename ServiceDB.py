@@ -3,11 +3,8 @@ from flask import Response
 from flask_restful import Api, Resource, reqparse
 from flask import jsonify
 from flask_cors import CORS
-from wand.image import Image
-import cv2 as cv2
 import numpy as np
 import os
-#from OpenSSL import SSL
 from DB import fill_ef_segments
  
 app = Flask(__name__)
@@ -33,12 +30,6 @@ r_400 = Response("Peticion invalida.", status=400)
 r_500 = Response("Error interno del servidor", status=500)
 
 
-#context = SSL.Context(SSL.SSLv3_METHOD)
-#context = SSL.Context(SSL.TLSv1_2_METHOD)
-#context.use_certificate('cert.pem')
-#context.use_privatekey('key.pem')
-
-
 class User(Resource):
     def post(self):
         parser = reqparse.RequestParser()
@@ -47,10 +38,11 @@ class User(Resource):
         
         print('\nPARAMETROS ENTRADA:')
         for key,value in args.items():
-            parameters=['','','']
-            parameters=value.split(",")
-            fill_ef_segments(parameters)
-            #print(key + ':', value)
+            #parameters=['','','','','','','','','','','','']
+            #parameters=value.split(",")
+        
+        #fill_ef_segments(parameters)
+            print(key + ':', value)
             #for item in value:
              #   print(item)
                 #
@@ -59,10 +51,14 @@ class User(Resource):
             #
             #
             #
-            return value
+        return True
             
 
 api.add_resource(User, "/")
 
+<<<<<<< HEAD
 app.run(ssl_context=('cert.pem', 'key.pem'),debug=True, port=1233, host='0.0.0.0')
+=======
+app.run(debug=True, port=1233, host='0.0.0.0')
+>>>>>>> b51f5d3cb4c37fd8aabb278a223f6f630adf10fd
 
